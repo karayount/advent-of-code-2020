@@ -9,11 +9,11 @@ describe 'ExpenseReport' do
       expense_report = ExpenseReport.new
       expect(expense_report.product_for_2020_sum(input)).to eql(514579)
     end
-  
+
     it 'day 1 part 1' do
       reader = Reader.new
-      input = reader.read_input_to_number_set('./input/day_1_input.txt')
-  
+      input = reader.read_input_to_number_set('./input/day_01_input.txt')
+
       expense_report = ExpenseReport.new
       expect(expense_report.product_for_2020_sum(input)).to eql(381699)
     end
@@ -25,11 +25,11 @@ describe 'ExpenseReport' do
       expense_report = ExpenseReport.new
       expect(expense_report.product_for_3_to_2020_sum(input)).to eql(241861950)
     end
-  
+
     it 'day 1 part 2' do
       reader = Reader.new
-      input = reader.read_input_to_number_array('./input/day_1_input.txt')
-  
+      input = reader.read_input_to_number_array('./input/day_01_input.txt')
+
       expense_report = ExpenseReport.new
       expect(expense_report.product_for_3_to_2020_sum(input)).to eql(111605670)
     end
