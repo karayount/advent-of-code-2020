@@ -36,4 +36,27 @@ class Reader
 
     all
   end
+
+  def read_treescape(file)
+    f = File.open(file, "r")
+    all = []
+
+    f.each_line do |line|
+      all << line
+    end
+
+    num_rows = all.length
+    num_columns = all[0].length
+
+    all.map! do |row|
+      # this replication depends on the max slope
+      row = row.strip * (num_rows*7 + 1)
+    end
+
+    all.map! do |row|
+      row = row.split('')
+    end
+
+    all
+  end
 end
