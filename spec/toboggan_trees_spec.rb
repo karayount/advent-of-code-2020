@@ -7,17 +7,16 @@ puzzle_input = reader.read_treescape('./input/day_03_input.txt')
 
 describe 'TobogganTrees' do
   describe '#count_trees_in_path' do
-    down_step = 1
-    right_step = 3
+    slope = { x: 3, y: 1 }
 
     it 'example' do
       toboggan_trees = TobogganTrees.new
-      expect(toboggan_trees.count_trees_in_path(example_input, down_step, right_step)).to eql(7)
+      expect(toboggan_trees.count_trees_in_path(example_input, slope)).to eql(7)
     end
 
     it 'day 3 part 1' do
       toboggan_trees = TobogganTrees.new
-      expect(toboggan_trees.count_trees_in_path(puzzle_input, down_step, right_step)).to eql(211)
+      expect(toboggan_trees.count_trees_in_path(puzzle_input, slope)).to eql(211)
     end
   end
 

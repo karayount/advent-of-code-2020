@@ -1,5 +1,5 @@
 class TobogganTrees
-  def count_trees_in_path(input, down_step, right_step)
+  def count_trees_in_path(input, slope)
     tree_count = 0
     row = 0
     column = 0
@@ -10,8 +10,8 @@ class TobogganTrees
         if input[row][column] == tree
           tree_count += 1
         end
-        row += down_step
-        column += right_step
+        row += slope[:y]
+        column += slope[:x]
       end
     end
 
@@ -20,11 +20,16 @@ class TobogganTrees
 
   def product_of_tree_counts(input)
     product = 1
-    product *= count_trees_in_path(input, 1, 1)
-    product *= count_trees_in_path(input, 1, 3)
-    product *= count_trees_in_path(input, 1, 5)
-    product *= count_trees_in_path(input, 1, 7)
-    product *= count_trees_in_path(input, 2, 1)
+    slopes = [
+      { x: 1, y: 1},
+      { x: 3, y: 1},
+      { x: 5, y: 1},
+      { x: 7, y: 1},
+      { x: 1, y: 2}
+    ]
+    slopes.each do |slope|
+      product *= count_trees_in_path(input, slope)
+    end
 
     product
   end
