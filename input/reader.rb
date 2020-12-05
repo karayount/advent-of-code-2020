@@ -59,4 +59,26 @@ class Reader
 
     all
   end
+
+  def read_passports(file)
+    f = File.open(file, "r")
+    passports = []
+    current = ''
+
+    f.each_line do |line|
+      line.strip!
+      if line == ''
+        passport = current.split(' ').map{ |field| [field.split(':')[0], field.split(':')[1]] }.to_h
+        passports.push(passport)
+        current = line
+      else
+        current += line + ' '
+      end
+    end
+
+    passport = current.split(' ').map{ |field| [field.split(':')[0], field.split(':')[1]] }.to_h
+    passports.push(passport)
+
+    passports
+  end
 end
