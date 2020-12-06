@@ -1,4 +1,4 @@
-require './expense_report.rb'
+require './lib/expense_report.rb'
 require './input/reader.rb'
 
 

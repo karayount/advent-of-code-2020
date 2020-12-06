@@ -1,4 +1,4 @@
-require './corrupt_passwords.rb'
+require './lib/corrupt_passwords.rb'
 require './input/reader.rb'
 
 

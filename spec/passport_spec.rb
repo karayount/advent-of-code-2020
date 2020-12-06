@@ -1,4 +1,4 @@
-require './passport.rb'
+require './lib/passport.rb'
 require './input/reader.rb'
 
 reader = Reader.new

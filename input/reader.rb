@@ -81,4 +81,24 @@ class Reader
 
     passports
   end
+
+  def read_customs_forms_groups(file)
+    f = File.open(file, "r")
+    groups = []
+    current = []
+
+    f.each_line do |line|
+      line.strip!
+      if line == ''
+        groups.push(current)
+        current = []
+      else
+        current.push(line)
+      end
+    end
+
+    groups.push(current)
+
+    groups
+  end
 end

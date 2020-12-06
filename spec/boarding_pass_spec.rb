@@ -1,4 +1,4 @@
-require './boarding_pass.rb'
+require './lib/boarding_pass.rb'
 require './input/reader.rb'
 
 f = File.open('./input/day_05_input.txt', "r")

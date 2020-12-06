@@ -1,4 +1,4 @@
-require './toboggan_trees.rb'
+require './lib/toboggan_trees.rb'
 require './input/reader.rb'
 
 reader = Reader.new
