@@ -1,10 +1,8 @@
-require './input/reader.rb'
-
 class ExpenseReport
   def product_for_2020_sum(input)
     input.each do |twenty|
       other = 2020 - twenty
-      if input.include?(other) 
+      if input.include?(other)
         return twenty * other
       end
       input.delete(twenty)
@@ -20,6 +18,6 @@ class ExpenseReport
           end
         end
       end
-    end 
+    end
   end
 end

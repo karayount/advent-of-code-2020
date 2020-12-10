@@ -1,7 +1,6 @@
 require './lib/expense_report.rb'
 require './input/reader.rb'
 
-
 describe 'ExpenseReport' do
   describe '#product_for_2020_sum' do
     it 'example' do
